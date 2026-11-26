@@ -1,5 +1,5 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="62 57 520 520" role="img" aria-label="RintisWeb, ikon warna penuh">
-  <title>RintisWeb, ikon warna penuh</title>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="22 17 600 600" role="img" aria-label="RintisWeb">
+  <title>RintisWeb</title>
   <defs>
     <linearGradient id="rw-g-r" x1="0" y1="97" x2="0" y2="537" gradientUnits="userSpaceOnUse">
       <stop offset="0" stop-color="#061c7c"/>
@@ -15,6 +15,7 @@
       <path d="M80 537 C 96 450 196 336 364 267 L 350 246 L 446 222 L 413 315 L 396 296 C 288 358 244 452 238 537 Z" fill="#000" stroke="#000" stroke-width="38" stroke-linejoin="round"/>
     </mask>
   </defs>
+  <rect x="22" y="17" width="600" height="600" rx="132" fill="#ffffff"/>
   <g mask="url(#rw-celah)" fill="url(#rw-g-r)">
     <path fill-rule="evenodd" d="M122 420 V129 Q122 97 154 97 H428 C 508 97 564 160 564 250 C 564 336 506 402 428 404 H186 V420 Z M186 161 H432 C 472 161 499 200 499 250 C 499 304 470 340 428 340 H186 Z"/>
     <path d="M266 370 H440 L462 390 L556 512 Q568 537 540 537 H412 Q400 537 392 527 Z"/>

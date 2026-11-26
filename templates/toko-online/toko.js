@@ -17,6 +17,13 @@
   var DISKON = '__diskon';
 
   var IKON = {
+    kilat: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M13 2 4 14h7l-1 8 9-12h-7z"/></svg>',
+    keranjang: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 4h2l2.2 10.5a1.5 1.5 0 0 0 1.5 1.2h8.6a1.5 1.5 0 0 0 1.5-1.1L21 8H6.2"/><circle cx="9" cy="19.5" r="1.3"/><circle cx="17" cy="19.5" r="1.3"/></svg>',
+    sepatu: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2.5 16.5V9l4 1.5 3.5-3 5 5.5 5.5 1.5a1.8 1.8 0 0 1 1.3 1.7v.3h-19.3z"/><path d="M2.5 19.5h19"/><path d="M10 11l1.5-1.2M12 13l1.5-1.2"/></svg>',
+    hak: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 7.5V12c4 0 7 2 9.5 5H20a1.4 1.4 0 0 0 .9-2.5C18.5 12.6 15 11.6 12.5 9L10 11z"/><path d="M4.3 12.2 5 20.5M7.2 13.4 5 20.5"/></svg>',
+    sneaker: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2.5 17.5v-7.5c2 0 3.5-1 4.5-3l3 1.5c1 3 3 4.5 6 5l4 .8a2 2 0 0 1 1.5 2V17.5z"/><path d="M2.5 17.5h19v2h-19z"/><path d="M9.5 10.5l1.5-1M11 12.5l1.5-1"/></svg>',
+    baju: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8.5 3.5 4 6 2.5 10.5l3.5 1.3V20.5h12v-8.7l3.5-1.3L20 6l-4.5-2.5a3.5 3.5 0 0 1-7 0z"/></svg>',
+    truk: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2.5 6.5h11v10h-11z"/><path d="M13.5 10h4l3 3.5v3h-7"/><circle cx="6.5" cy="17.5" r="1.8"/><circle cx="17" cy="17.5" r="1.8"/></svg>',
     cari: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>',
     tas: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 7h12l1 13H5L6 7Z"/><path d="M9 7a3 3 0 0 1 6 0"/></svg>',
     rumah: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round" aria-hidden="true"><path d="M3 11 12 4l9 7v9H5v-9"/><path d="M10 20v-5h4v5"/></svg>',
@@ -260,7 +267,7 @@
       '<a class="merek" href="#produk">' + namaToko + '</a>' +
       '<label class="cari"><span class="tersembunyi">Cari produk</span>' + IKON.cari + '<input type="search" id="cari" placeholder="Cari di ' + namaToko + '" autocomplete="off"></label>' +
       htmlTombolKeranjang() + '</div></header>' +
-      (T.pengumuman ? '<p class="strip-info">' + esc(T.pengumuman) + '</p>' : '') +
+      (T.pengumuman ? '<p class="strip-info">' + IKON.truk + '<span>' + esc(T.pengumuman) + '</span></p>' : '') +
       '<h1 class="tersembunyi">' + namaToko + '</h1>' +
       '<section class="wadah karusel" id="karusel" aria-label="Promo"><div class="karusel-geser" id="karusel-geser">' +
       slide.map(function (sl, i) {
@@ -271,7 +278,7 @@
       (slide.length > 1 ? '<div class="karusel-titik" aria-hidden="true">' + slide.map(function (x, i) { return '<span' + (i ? '' : ' class="aktif"') + '></span>'; }).join('') + '</div>' : '') + '</section>' +
       '<section class="wadah ikon-kategori" id="ikon-kategori" aria-label="Kategori"></section>' +
       '<section class="flash" id="flash" aria-labelledby="flash-judul" hidden><div class="wadah"><div class="flash-kotak">' +
-      '<div class="rak-kepala"><div class="flash-judul"><h2 id="flash-judul">&#9889; ' + esc(T.judulDiskon || 'Flash Sale') + '</h2>' +
+      '<div class="rak-kepala"><div class="flash-judul"><h2 id="flash-judul">' + IKON.kilat + esc(T.judulDiskon || 'Flash Sale') + '</h2>' +
       '<span class="hitung" aria-label="Sisa waktu promo"><span id="jam">00</span>:<span id="menit">00</span>:<span id="detik">00</span></span></div>' +
       '<button type="button" class="lihat-semua" data-lihat="' + DISKON + '">Lihat semua</button></div>' +
       '<div class="rak-geser" id="flash-isi"></div></div></div></section>' +
@@ -362,7 +369,9 @@
     if (ikon) {
       var peta = T.ikonKategori || {};
       ikon.innerHTML = isi.map(function (k) {
-        var e = k === 'Semua' ? (peta.Semua || '🛍️') : k === DISKON ? (peta[namaDiskon] || '🏷️') : (peta[k] || '🛒');
+        // Nilai ikonKategori boleh nama ikon bawaan (tas, sepatu, hak, sneaker, baju, tag, kotak, keranjang) atau emoji.
+        var nama = k === 'Semua' ? (peta.Semua || 'kotak') : k === DISKON ? (peta[namaDiskon] || 'tag') : (peta[k] || 'keranjang');
+        var e = IKON[nama] || esc(nama);
         return '<button type="button" data-kategori="' + esc(k) + '" aria-pressed="' + (k === pilihan.kategori) + '"><span class="ikon-bulat" aria-hidden="true">' + e + '</span><span>' + esc(namaKategori(k)) + '</span></button>';
       }).join('');
     }

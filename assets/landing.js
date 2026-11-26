@@ -27,6 +27,9 @@
     if (p.mulai) return sapaan + 'saya mau konsultasi ' + p.nama + ' (' + hargaTeks(p) + '). Kebutuhan saya: ';
     return sapaan + 'saya tertarik paket ' + p.nama + ' (' + rupiah(p.harga) + '). Usaha saya: ';
   }
+  var WARNA = { 'toko-online': 'warna-toko', 'company-profile': 'warna-profil', 'landing-page': 'warna-landing', aplikasi: 'warna-aplikasi' };
+  var IKON = { 'toko-online': 'i-toko', 'company-profile': 'i-gedung', 'landing-page': 'i-halaman', aplikasi: 'i-aplikasi' };
+  function ikonPaket(p) { return '<span class="ikon-ubin"><svg class="ikon" aria-hidden="true"><use href="#' + (IKON[p.id] || 'i-halaman') + '"/></svg></span>'; }
   function isi(sel, teks) { if (teks) semua(sel).forEach(function (n) { n.textContent = teks; }); }
 
   if (!wa) $('#peringatan').hidden = false;
@@ -58,9 +61,9 @@
 
   // ---------------------------------------------------------------- kartu layanan di hero
   $('#kartu-layanan').innerHTML = paket.map(function (p) {
-    return '<a class="' + (p.unggulan ? 'unggul' : '') + '" href="#' + esc(p.id) + '">' +
+    return '<a class="' + (WARNA[p.id] || 'warna-toko') + (p.unggulan ? ' unggul' : '') + '" href="#' + esc(p.id) + '">' +
       (p.label ? '<span class="lencana">' + esc(p.label) + '</span>' : '') +
-      '<span class="nama">' + esc(p.nama) + '</span>' +
+      '<span class="kepala-kartu">' + ikonPaket(p) + '<span class="nama">' + esc(p.nama) + '</span></span>' +
       '<span class="slogan">' + esc(p.slogan) + '</span>' +
       '<span class="harga">' + (p.mulai ? 'mulai ' : '') + '<b>' + rupiah(p.harga) + '</b> &middot; ' + esc(p.lama) + '</span>' +
       '<span class="panah">Lihat contoh &rarr;</span></a>';
@@ -94,9 +97,9 @@
 
   // ---------------------------------------------------------------- harga
   $('#grid-paket').innerHTML = paket.map(function (p) {
-    return '<article class="paket' + (p.unggulan ? ' unggul' : '') + '">' +
+    return '<article class="paket ' + (WARNA[p.id] || 'warna-toko') + (p.unggulan ? ' unggul' : '') + '">' +
       (p.label ? '<span class="lencana">' + esc(p.label) + '</span>' : '') +
-      '<h3>' + esc(p.nama) + '</h3><p class="slogan">' + esc(p.slogan) + '</p>' +
+      '<div class="kepala-paket">' + ikonPaket(p) + '<h3>' + esc(p.nama) + '</h3></div><p class="slogan">' + esc(p.slogan) + '</p>' +
       '<div class="harga">' + (p.mulai ? '<span class="mulai">mulai</span>' : '') + rupiah(p.harga) + '<small>sekali bayar &middot; ' + esc(p.lama) + '</small></div>' +
       (p.cocok ? '<p class="info-kecil">Cocok untuk ' + esc(p.cocok.charAt(0).toLowerCase() + p.cocok.slice(1)) + '.</p>' : '') +
       '<ul>' + (p.fitur || []).map(function (f) { return '<li>' + esc(f) + '</li>'; }).join('') + '</ul>' +

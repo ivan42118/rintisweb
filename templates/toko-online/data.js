@@ -9,7 +9,8 @@ window.TOKO = {
                                     // Contoh tiap gaya: contoh/kanaya-wear, contoh/langkah-footwear, contoh/batik-sekar-jagad
   judulDiskon: '',                  // judul rak produk diskon, misalnya 'Lagi diskon' atau 'Flash Sale'
   promoBerakhir: '',                // gaya pasar: waktu akhir flash sale, misalnya '2026-12-31T23:59'. Kosong = tengah malam setiap hari
-  // Gaya pasar: slide: [{ judul, teks, gambar, latar }], ikonKategori: { Semua: '🛍️', NamaKategori: '👟', Promo: '🏷️' }
+  // Gaya pasar: slide: [{ judul, teks, gambar, latar }], ikonKategori: { Semua: 'kotak', NamaKategori: 'sepatu', Promo: 'tag' }
+  //   Nama ikon bawaan: kotak, tas, sepatu, hak, sneaker, baju, tag, keranjang (emoji juga boleh)
   // Gaya galeri: cerita: { judul, teks, gambar, alt }, keteranganDiskon: 'Berlaku sampai ...'
   // Setiap produk boleh diberi terjual: 120 dan sisa: 5 (ditampilkan di gaya pasar)
   slug: 'nama-toko',                // huruf kecil tanpa spasi, dipakai untuk menyimpan keranjang

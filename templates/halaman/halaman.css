@@ -99,7 +99,8 @@ h1, h2, h3 { font-family: var(--font-judul); line-height: 1.15; letter-spacing: 
 .kartu { background: var(--kartu); border: 1px solid var(--garis); border-radius: var(--radius); padding: 20px; }
 .kartu h3 { margin: 0 0 6px; font-size: 19px; }
 .kartu p { margin: 0; color: var(--redup); font-size: 15px; }
-.kartu .ikon { width: 44px; height: 44px; border-radius: 12px; display: grid; place-items: center; background: var(--latar-2); margin-bottom: 12px; font-size: 22px; }
+.kartu .ikon { width: 46px; height: 46px; border-radius: 14px; display: grid; place-items: center; background: var(--latar-2); color: var(--aksen); margin-bottom: 12px; font-size: 22px; }
+.kartu .ikon svg { width: 24px; height: 24px; }
 .paket { display: flex; flex-direction: column; gap: 12px; }
 .paket.unggul { border: 2px solid var(--aksen); box-shadow: var(--bayang); }
 .paket .harga { font-size: 26px; font-weight: 800; font-family: var(--font-judul); }

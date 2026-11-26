@@ -15,7 +15,7 @@ window.TOKO = {
   ],
   pengumuman: 'Gratis ongkir se-Pulau Jawa untuk belanja minimal Rp 300.000',
   judulDiskon: 'Flash Sale',
-  ikonKategori: { Semua: '🛍️', Pria: '👞', Wanita: '👠', Kasual: '👟', Promo: '🏷️' },
+  ikonKategori: { Semua: 'kotak', Pria: 'sepatu', Wanita: 'hak', Kasual: 'sneaker', Promo: 'tag' },
   kategori: ['Pria', 'Wanita', 'Kasual'],
   produk: [
     { id: 'oxford-cokelat', nama: 'Oxford Kulit Cokelat Tua', kategori: 'Pria', harga: 459000, hargaCoret: 529000, label: 'Terlaris', terjual: 128, sisa: 4,

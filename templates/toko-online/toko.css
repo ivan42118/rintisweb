@@ -254,7 +254,8 @@ th { background: var(--garis); }
 .gaya-pasar .kepala .tombol-ikon { border: 0; background: rgba(255,255,255,.18); color: var(--utama-teks); }
 .gaya-pasar .lencana { background: #ffd23f; color: #1c1917; }
 .gaya-pasar .strip-info { margin: 0; background: #fff; color: #166534; font-size: 13px; font-weight: 600; text-align: center; padding: 8px 16px; border-bottom: 1px solid var(--garis); }
-.gaya-pasar .strip-info::before { content: "🚚 "; }
+.gaya-pasar .strip-info { display: flex; align-items: center; justify-content: center; gap: 8px; }
+.gaya-pasar .strip-info svg { width: 18px; height: 18px; flex: none; }
 .gaya-pasar .karusel { margin-top: 12px; position: relative; }
 .gaya-pasar .karusel-geser { display: flex; overflow-x: auto; scroll-snap-type: x mandatory; scrollbar-width: none; border-radius: 12px; }
 .gaya-pasar .karusel-geser::-webkit-scrollbar { display: none; }
@@ -269,12 +270,14 @@ th { background: var(--garis); }
 .gaya-pasar .karusel-titik span.aktif { width: 18px; background: #fff; }
 .gaya-pasar .ikon-kategori { display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 6px; margin-top: 14px; background: #fff; border-radius: 12px; padding: 12px 8px; }
 .gaya-pasar .ikon-kategori button { border: 0; background: none; display: grid; justify-items: center; gap: 6px; font-size: 12px; font-weight: 600; color: var(--teks); padding: 4px 0; }
-.gaya-pasar .ikon-bulat { width: 48px; height: 48px; border-radius: 16px; display: grid; place-items: center; font-size: 24px; background: #fff4ec; border: 1px solid #ffe2cf; }
-.gaya-pasar .ikon-kategori button[aria-pressed="true"] .ikon-bulat { background: var(--utama); border-color: var(--utama); }
+.gaya-pasar .ikon-bulat { width: 48px; height: 48px; border-radius: 16px; display: grid; place-items: center; font-size: 24px; background: #fff4ec; border: 1px solid #ffe2cf; color: var(--utama); }
+.gaya-pasar .ikon-bulat svg { width: 24px; height: 24px; }
+.gaya-pasar .ikon-kategori button[aria-pressed="true"] .ikon-bulat { background: var(--utama); border-color: var(--utama); color: #fff; }
 .gaya-pasar .ikon-kategori button[aria-pressed="true"] { color: var(--utama); }
 .gaya-pasar .flash { margin-top: 14px; }
 .gaya-pasar .flash-kotak { background: #fff; border-radius: 12px; padding: 14px 12px 8px; }
 .gaya-pasar .flash-judul { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; }
+.gaya-pasar .flash-judul h2 svg { width: 22px; height: 22px; fill: #facc15; stroke: var(--diskon); stroke-width: 1.6; vertical-align: -4px; margin-right: 6px; }
 .gaya-pasar .flash-judul h2 { margin: 0; font-size: 19px; font-style: italic; font-weight: 900; color: var(--diskon); text-transform: uppercase; letter-spacing: .02em; }
 .gaya-pasar .hitung { display: inline-flex; gap: 3px; align-items: center; font-weight: 800; color: #1c1917; }
 .gaya-pasar .hitung span { background: #1c1917; color: #fff; border-radius: 5px; padding: 2px 5px; font-size: 13px; font-variant-numeric: tabular-nums; }

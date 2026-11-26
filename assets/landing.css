@@ -218,16 +218,28 @@ td.unggul::before { content: "✓ "; color: var(--wa); }
 .daftar-tambahan b { white-space: nowrap; color: var(--navy); }
 
 /* Cara kerja */
-.langkah { list-style: none; counter-reset: langkah; margin: 0; padding: 0; display: grid; gap: 14px; }
-@media (min-width: 760px) { .langkah { grid-template-columns: repeat(4, 1fr); } }
-.langkah li { counter-increment: langkah; background: var(--kartu); border: 1px solid var(--garis); border-radius: var(--radius); padding: 20px; }
-.langkah li::before { content: counter(langkah); display: grid; place-items: center; width: 36px; height: 36px; border-radius: 12px; background: var(--navy); color: #fff; font-weight: 800; margin-bottom: 12px; }
+/* Cara kerja: timeline rata tengah. Di HP garis dan panah ke bawah, di layar lebar ke kanan. */
+.langkah { list-style: none; margin: 0 auto; padding: 0; display: grid; gap: 44px; max-width: 440px; }
+.langkah li { position: relative; text-align: center; background: var(--kartu); border: 1px solid var(--garis); border-radius: var(--radius); padding: 24px 20px 20px; box-shadow: var(--bayang-kecil); }
+.langkah-ikon { position: relative; display: grid; place-items: center; width: 58px; height: 58px; margin: 0 auto 12px; border-radius: 18px; background: linear-gradient(135deg, var(--biru), var(--cyan)); color: #fff; box-shadow: 0 10px 22px rgba(18, 87, 255, .25); }
+.langkah-ikon .ikon { width: 27px; height: 27px; }
+.langkah-no { position: absolute; top: -9px; right: -9px; width: 26px; height: 26px; border-radius: 50%; background: var(--navy); color: #fff; font-size: 13px; font-weight: 800; display: grid; place-items: center; border: 2px solid #fff; }
 .langkah b { display: block; font-size: 18px; color: var(--navy); margin-bottom: 4px; }
-.langkah span { color: var(--redup); font-size: 15px; line-height: 1.5; }
+.langkah-teks { display: block; color: var(--redup); font-size: 15px; line-height: 1.5; }
+.langkah li:not(:last-child)::before { content: ""; position: absolute; left: 50%; top: 100%; width: 2px; height: 36px; background: linear-gradient(var(--biru), var(--cyan)); transform: translateX(-50%); }
+.langkah li:not(:last-child)::after { content: ""; position: absolute; left: 50%; top: calc(100% + 34px); border-left: 7px solid transparent; border-right: 7px solid transparent; border-top: 9px solid var(--cyan); transform: translateX(-50%); }
+@media (min-width: 900px) {
+  .langkah { grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 40px; max-width: none; }
+  .langkah li:not(:last-child)::before { left: 100%; top: 50%; width: 32px; height: 2px; transform: translateY(-50%); background: linear-gradient(90deg, var(--biru), var(--cyan)); }
+  .langkah li:not(:last-child)::after { left: calc(100% + 30px); top: 50%; border-top: 7px solid transparent; border-bottom: 7px solid transparent; border-left: 9px solid var(--cyan); border-right: 0; transform: translateY(-50%); }
+}
 .pembayaran { text-align: center; color: var(--redup); margin: 20px 0 0; font-size: 15px; }
 .keunggulan { display: grid; gap: 14px; margin-top: 40px; }
 @media (min-width: 760px) { .keunggulan { grid-template-columns: repeat(4, 1fr); } }
-.keunggulan div { border-left: 3px solid var(--biru); padding: 4px 0 4px 16px; }
+.keunggulan div { padding: 0; }
+.keunggulan-ikon { display: grid; place-items: center; width: 46px; height: 46px; border-radius: 14px; background: var(--biru-muda); color: var(--biru); margin-bottom: 10px; }
+.keunggulan-ikon .ikon { width: 23px; height: 23px; }
+@media (max-width: 759px) { .keunggulan { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 18px 14px; } }
 .keunggulan h3 { font-size: 17px; color: var(--navy); margin-bottom: 4px; }
 .keunggulan p { margin: 0; color: var(--redup); font-size: 15px; line-height: 1.5; }
 
@@ -279,7 +291,7 @@ td.unggul::before { content: "✓ "; color: var(--wa); }
 .grid-aplikasi { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; }
 @media (min-width: 900px) { .grid-aplikasi { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 16px; } }
 .ide-aplikasi { background: var(--latar-2); border: 1px solid var(--garis); border-radius: var(--radius); padding: 16px; }
-.ide-aplikasi span { font-size: 26px; display: block; margin-bottom: 6px; }
+.ide-aplikasi > span:not(.ide-ikon) { font-size: 26px; display: block; margin-bottom: 6px; }
 .ide-aplikasi h3 { font-size: 16px; color: var(--navy); margin-bottom: 4px; letter-spacing: -.01em; }
 .ide-aplikasi p { margin: 0; font-size: 14px; color: var(--redup); line-height: 1.45; }
 @media (min-width: 720px) { .grid-contoh.dua { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
@@ -294,3 +306,52 @@ td.unggul::before { content: "✓ "; color: var(--wa); }
 .ajakan-aplikasi { margin-top: 20px; display: grid; gap: 12px; align-items: center; background: var(--biru-muda); border: 1px solid #cfdcff; border-radius: var(--radius); padding: 18px 20px; }
 .ajakan-aplikasi p { margin: 0; font-weight: 700; color: var(--navy); }
 @media (min-width: 760px) { .ajakan-aplikasi { grid-template-columns: 1fr auto; } }
+
+
+/* =================================================================== Ikon garis dan warna per layanan */
+.ikon { width: 22px; height: 22px; fill: none; stroke: currentColor; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; flex: none; }
+.warna-toko { --w: #1257ff; --w-muda: #eef3ff; --w-garis: #cddcff; }
+.warna-profil { --w: #7c3aed; --w-muda: #f5f0ff; --w-garis: #e1d5ff; }
+.warna-landing { --w: #0d9488; --w-muda: #eafaf6; --w-garis: #c3ece2; }
+.warna-aplikasi { --w: #ea580c; --w-muda: #fff4ec; --w-garis: #fdd8bf; }
+.ikon-ubin { display: grid; place-items: center; width: 34px; height: 34px; border-radius: 11px; background: var(--w, var(--biru)); color: #fff; flex: none; }
+.ikon-ubin .ikon { width: 19px; height: 19px; }
+
+/* Bagian layanan: latar berwarna dan garis atas supaya perpindahan layanan terasa */
+.layanan-bagian { background: var(--w-muda); box-shadow: inset 0 4px 0 var(--w); }
+.label-layanan { display: inline-flex; align-items: center; gap: 10px; margin: 0 0 14px; padding: 5px 16px 5px 5px; border-radius: 999px; background: #fff; border: 1px solid var(--w-garis); color: var(--w); font-size: 15px; font-weight: 800; letter-spacing: .02em; box-shadow: var(--bayang-kecil); }
+.kepala-bagian p.label-layanan { margin: 0 0 14px; font-size: 15px; color: var(--w); }
+.layanan-bagian .judul-contoh { color: var(--navy); }
+.layanan-bagian .kartu-contoh .jenis { color: var(--w); }
+.layanan-bagian .kartu-contoh .tombol-utama { background: var(--w); }
+.layanan-bagian .kartu-contoh .tombol-utama:hover { filter: brightness(.92); }
+.layanan-bagian .kartu-contoh .layar { background: linear-gradient(160deg, var(--w-muda), #fff); }
+.layanan-tata { display: grid; gap: 26px; align-items: center; }
+@media (min-width: 960px) { .layanan-tata { grid-template-columns: minmax(0, 1.1fr) minmax(0, .9fr); gap: 48px; } }
+.layanan-teks h2 { font-size: clamp(28px, 5.5vw, 42px); font-weight: 800; color: var(--navy); letter-spacing: -.03em; margin-bottom: 12px; }
+.layanan-isi { color: var(--redup); font-size: 18px; margin: 0 0 16px; }
+.layanan-bagian .centang li::before { background: #fff; color: var(--w); border: 1px solid var(--w-garis); }
+.layanan-bagian .cocok { margin: 14px 0 0; }
+.layanan-bagian .grid-contoh.satu .kartu-contoh { flex-direction: row; }
+@media (max-width: 420px) { .layanan-bagian .grid-contoh.satu .kartu-contoh { flex-direction: column; } }
+.layanan-bagian .kalkulator .tombol-utama { background: var(--w); }
+.layanan-bagian .ide-aplikasi { background: #fff; border-color: var(--w-garis); }
+.ide-ikon { display: grid; place-items: center; width: 42px; height: 42px; border-radius: 12px; background: var(--w-muda); color: var(--w); margin-bottom: 10px; }
+.ide-ikon .ikon { width: 22px; height: 22px; }
+.layanan-bagian .ajakan-aplikasi { background: #fff; border-color: var(--w-garis); }
+
+/* Kartu layanan di hero dan kartu harga memakai warna layanannya */
+.kartu-layanan a { border-top: 4px solid var(--w); }
+.kartu-layanan .unggul { border-color: var(--w); border-top-width: 4px; }
+.kartu-layanan .kepala-kartu { display: flex; align-items: center; gap: 10px; }
+.kartu-layanan .nama { color: var(--w); }
+.kartu-layanan .panah { color: var(--w); }
+.kartu-layanan .lencana { background: var(--w); }
+@media (max-width: 759px) { .kartu-layanan .ikon-ubin { width: 30px; height: 30px; border-radius: 9px; } .kartu-layanan .ikon-ubin .ikon { width: 17px; height: 17px; } .kartu-layanan .kepala-kartu { gap: 7px; } }
+.paket { border-top: 5px solid var(--w); }
+.paket.unggul { border-color: var(--w); border-top-width: 5px; }
+.paket .kepala-paket { display: flex; align-items: center; gap: 10px; }
+.paket .slogan { color: var(--w); }
+.paket .lencana { background: var(--w); }
+.paket .tombol-garis:hover { border-color: var(--w); color: var(--w); }
+.paket.unggul .tombol-utama { background: var(--w); }

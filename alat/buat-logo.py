@@ -198,6 +198,17 @@ def svg_ikon(varian, judul):
             f"  <title>{judul}</title>\n{defs_ikon()}{gambar_ikon(varian)}</svg>\n")
 
 
+def svg_ubin(judul):
+    """Ikon di atas ubin putih bersudut bulat: tetap terlihat di tab browser mode gelap maupun terang."""
+    sisi = 600
+    cx, cy = (IKON_KIRI + IKON_KANAN) / 2, (IKON_ATAS + IKON_BAWAH) / 2
+    x, y = cx - sisi / 2, cy - sisi / 2
+    return (f'<svg xmlns="http://www.w3.org/2000/svg" viewBox="{x:.0f} {y:.0f} {sisi} {sisi}" role="img" aria-label="{judul}">\n'
+            f"  <title>{judul}</title>\n{defs_ikon()}"
+            f'  <rect x="{x:.0f}" y="{y:.0f}" width="{sisi}" height="{sisi}" rx="132" fill="#ffffff"/>\n'
+            f"{gambar_ikon('warna')}</svg>\n")
+
+
 def svg_logo(varian, huruf_tebal, huruf_tagline, pakai_tagline=False):
     teks, x_kanan = tulisan(huruf_tebal, huruf_tagline, varian, pakai_tagline)
     pad = 24
@@ -269,7 +280,10 @@ def main():
         file_svg[f"logo-tagline-{v}"] = p
         rasio[f"logo-tagline-{v}"] = r
 
-    shutil.copyfile(file_svg["ikon-warna"], OUT / "favicon.svg")
+    ubin = OUT / "rintisweb-ikon-ubin.svg"
+    ubin.write_text(svg_ubin("RintisWeb"), encoding="utf-8")
+    file_svg["ikon-ubin"] = ubin
+    shutil.copyfile(ubin, OUT / "favicon.svg")
 
     chrome = cari_chrome()
     png = OUT / "png"
@@ -282,9 +296,9 @@ def main():
         ("ikon-warna", "apple-touch-icon.png", 180, 180, "#ffffff", 0.78),
         ("ikon-warna", "icon-192.png", 192, 192, "#ffffff", 0.66),
         ("ikon-warna", "icon-512.png", 512, 512, "#ffffff", 0.66),
-        ("ikon-warna", "favicon-48.png", 48, 48, "transparent", 1.0),
-        ("ikon-warna", "favicon-32.png", 32, 32, "transparent", 1.0),
-        ("ikon-warna", "favicon-16.png", 16, 16, "transparent", 1.0),
+        ("ikon-ubin", "favicon-48.png", 48, 48, "transparent", 1.0),
+        ("ikon-ubin", "favicon-32.png", 32, 32, "transparent", 1.0),
+        ("ikon-ubin", "favicon-16.png", 16, 16, "transparent", 1.0),
     ]
     for kunci in ("logo-warna", "logo-putih", "logo-hitam", "logo-tagline-warna", "logo-tagline-putih"):
         lebar = 2000
