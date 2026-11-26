@@ -5,7 +5,6 @@
 Situs jualan jasa pembuatan website: **toko online**, **company profile**, dan **landing page**, lengkap dengan lima website contoh dan kalkulator potongan marketplace. Semuanya statis (HTML/CSS/JS biasa), tanpa server atau database, dan ringan di HP Android kelas menengah.
 
 - **Pengaturan (nomor WA, harga, promo, daftar contoh):** [config.js](config.js)
-- **Panduan lengkap (alur pesanan, cara mengerjakan paket, rencana 10 klien pertama):** [PANDUAN.md](PANDUAN.md)
 - **Template untuk pesanan klien:** [templates/](templates/README.md)
 - **File logo siap pakai:** [assets/logo/](assets/logo/README.md)
 

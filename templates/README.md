@@ -16,7 +16,7 @@ Dua template ini dipakai untuk mengerjakan pesanan dengan cepat. Website contoh 
    - Spanduk: 1400 x 700 px.
 3. Isi `data.js`: nama toko, nomor WA, warna, kategori, produk, pembayaran, dan pengiriman. Setiap bagian sudah diberi keterangan.
 4. Ganti judul, deskripsi, dan alamat situs di `index.html`.
-5. Buka di HP (lihat bagian "Mencoba di komputer" di PANDUAN.md), coba pesan sampai WhatsApp terbuka.
+5. Jalankan `python -m http.server 5510` di folder klien, buka http://localhost:5510 di HP atau mode HP browser (F12), lalu coba pesan sampai WhatsApp terbuka.
 
 ### Produk dari Google Sheet (supaya klien bisa mengubah sendiri)
 

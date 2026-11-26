@@ -4,3 +4,7 @@ _tmp/
 __pycache__/
 *.pyc
 .claude/settings.local.json
+
+# Dokumen internal (tidak dipublikasikan)
+PANDUAN.md
+USULAN.md
