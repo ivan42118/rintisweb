@@ -73,9 +73,33 @@ window.RINTISWEB = {
         'SEO dasar',
         '2× revisi'
       ]
+    },
+    {
+      id: 'aplikasi',
+      nama: 'Aplikasi Custom',
+      slogan: 'Kerja Rapi, Usaha Lancar.',
+      harga: 3500000,
+      mulai: true, // harga ditampilkan sebagai "mulai Rp ..."
+      lama: '5 hari kerja – 6 minggu',
+      cocok: 'Toko grosir, sekolah, klinik, laundry, kos-kosan',
+      fitur: [
+        'Aplikasi siap pakai mulai Rp 3.500.000: kasir dan stok, penilaian guru, absensi, antrian',
+        'Aplikasi custom sesuai permintaan mulai Rp 7.500.000, harga pasti setelah daftar fitur tertulis',
+        'Dipakai di HP dan laptop, tetap jalan tanpa internet',
+        'Data milikmu: cadangan dan ekspor ke Excel',
+        'Garansi perbaikan 30 hari',
+        'Perawatan opsional Rp 150.000 per bulan'
+      ]
     }
   ],
-  termasuk: 'Sudah termasuk domain .com atau .id, hosting, dan SSL untuk tahun pertama.',
+  termasuk: 'Paket website sudah termasuk domain .com atau .id, hosting, dan SSL untuk tahun pertama.',
+
+  // Layanan Aplikasi Custom (ditampilkan di bagian Aplikasi)
+  aplikasi: {
+    siapPakai: 3500000,
+    custom: 7500000,
+    perawatan: 150000
+  },
 
   // Biaya mulai tahun kedua
   perpanjangan: [
@@ -108,6 +132,10 @@ window.RINTISWEB = {
     { id: 'sekar-wedding', nama: 'Sekar Wedding', jenis: 'Wedding organizer', paket: 'company-profile', url: 'contoh/sekar-wedding/', gambar: 'assets/contoh/sekar-wedding.webp',
       ringkas: 'Portofolio, daftar paket, dan cek tanggal lewat WhatsApp.' },
     { id: 'kopi-tepas', nama: 'Kopi Tepas', jenis: 'Kafe', paket: 'landing-page', url: 'contoh/kopi-tepas/', gambar: 'assets/contoh/kopi-tepas.webp',
-      ringkas: 'Menu dan harga, jam buka, lokasi, dan pesan lewat WhatsApp.' }
+      ringkas: 'Menu dan harga, jam buka, lokasi, dan pesan lewat WhatsApp.' },
+    { id: 'kasir-grosir', nama: 'Kasir Grosir', jenis: 'Aplikasi · toko grosir', paket: 'aplikasi', url: 'contoh/kasir-grosir/', gambar: 'assets/contoh/kasir-grosir.webp',
+      ringkas: 'Harga grosir bertingkat, satuan pcs/pak/dus, stok menipis, kasbon pelanggan, laporan laba, struk ke WhatsApp.' },
+    { id: 'nilai-guru', nama: 'Nilai Guru', jenis: 'Aplikasi · sekolah', paket: 'aplikasi', url: 'contoh/nilai-guru/', gambar: 'assets/contoh/nilai-guru.webp',
+      ringkas: 'Bobot nilai otomatis, peringkat, kuis dikoreksi otomatis, analisis soal, dan deskripsi rapor otomatis.' }
   ]
 };

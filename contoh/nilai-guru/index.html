@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="id">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Nilai Guru · Contoh aplikasi penilaian otomatis · RintisWeb</title>
+<meta name="description" content="Contoh aplikasi penilaian untuk guru buatan RintisWeb: bobot nilai otomatis, peringkat, kuis pilihan ganda dikoreksi otomatis, analisis soal, dan deskripsi rapor otomatis.">
+<meta name="robots" content="noindex">
+<meta name="theme-color" content="#4338ca">
+<link rel="canonical" href="https://ivan42118.github.io/rintisweb/contoh/nilai-guru/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="RintisWeb">
+<meta property="og:title" content="Nilai Guru: contoh aplikasi penilaian otomatis">
+<meta property="og:description" content="Bobot nilai otomatis, peringkat, kuis dikoreksi otomatis, analisis soal, dan deskripsi rapor otomatis. Bisa dicoba langsung.">
+<meta property="og:url" content="https://ivan42118.github.io/rintisweb/contoh/nilai-guru/">
+<meta property="og:image" content="https://ivan42118.github.io/rintisweb/assets/contoh/nilai-guru-og.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="../../assets/logo/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="../../assets/logo/favicon.ico" sizes="any">
+<link rel="stylesheet" href="../../templates/aplikasi/aplikasi.css?v=20261127a">
+<style>
+  :root { --utama: #4338ca; --utama-muda: #eef0ff; }
+  .bobot-isi { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px; }
+  @media (min-width: 760px) { .bobot-isi { grid-template-columns: repeat(5, minmax(0, 1fr)); } }
+  .bobot { margin-bottom: 4px; }
+  .aksi-baris { display: flex; gap: 8px; }
+  .tabel-nilai td { padding: 6px 6px; }
+  .lekat { position: sticky; left: 0; background: var(--kartu); z-index: 1; box-shadow: 1px 0 0 var(--garis); }
+  thead .lekat { background: #f9fafb; z-index: 2; }
+  .sel-nilai { width: 58px; height: 34px; border: 1px solid var(--garis); border-radius: 8px; text-align: center; background: #fff; }
+  .sel-nilai:focus { border-color: var(--utama); outline: none; box-shadow: 0 0 0 3px var(--utama-muda); }
+  .sel-nilai.rendah { background: #fef2f2; border-color: #fecaca; color: var(--bahaya); font-weight: 700; }
+  .na { font-weight: 800; }
+  .input.jawab { width: 150px; height: 36px; letter-spacing: .14em; text-transform: uppercase; }
+  .input.kunci { letter-spacing: .2em; text-transform: uppercase; font-weight: 700; }
+  .rapor-tata { display: grid; gap: 16px; }
+  @media (min-width: 960px) { .rapor-tata { grid-template-columns: 420px minmax(0, 1fr); align-items: start; } }
+  .rapor-sekolah { margin: 0 0 4px; font-size: 12px; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; color: var(--utama); }
+  .rapor h2 { font-size: 20px; }
+  .rapor h3 { margin: 14px 0 6px; font-size: 15px; }
+  .rapor table td { white-space: normal; }
+  .rapor-angka { display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; margin-bottom: 10px; }
+  .rapor-angka div { background: var(--utama-muda); border-radius: 10px; padding: 8px 10px; }
+  .rapor-angka span { display: block; font-size: 12px; color: var(--redup); font-weight: 600; }
+  .rapor-angka b { font-size: 20px; color: var(--utama); }
+  .deskripsi-rapor { margin: 0; background: #f9fafb; border-left: 4px solid var(--utama); padding: 10px 12px; border-radius: 0 8px 8px 0; }
+  .daftar-deskripsi { display: grid; gap: 8px; }
+  .daftar-deskripsi p { margin: 6px 0 0; font-size: 14px; color: #374151; }
+</style>
+</head>
+<body>
+<div id="app"><noscript><p style="padding:24px">Aktifkan JavaScript untuk mencoba aplikasi contoh ini.</p></noscript></div>
+<script src="../../config.js"></script>
+<script src="nilai.js?v=20261127a"></script>
+</body>
+</html>

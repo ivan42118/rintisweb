@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="id">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Kasir Grosir · Contoh aplikasi kasir dan stok · RintisWeb</title>
+<meta name="description" content="Contoh aplikasi kasir dan stok untuk toko grosir buatan RintisWeb: harga grosir bertingkat, satuan pcs/pak/dus, kasbon pelanggan, laporan laba, dan struk ke WhatsApp.">
+<meta name="robots" content="noindex">
+<meta name="theme-color" content="#0f766e">
+<link rel="canonical" href="https://ivan42118.github.io/rintisweb/contoh/kasir-grosir/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="RintisWeb">
+<meta property="og:title" content="Kasir Grosir: contoh aplikasi kasir dan stok">
+<meta property="og:description" content="Harga grosir bertingkat, satuan pcs/pak/dus, kasbon pelanggan, laporan laba, dan struk ke WhatsApp. Bisa dicoba langsung.">
+<meta property="og:url" content="https://ivan42118.github.io/rintisweb/contoh/kasir-grosir/">
+<meta property="og:image" content="https://ivan42118.github.io/rintisweb/assets/contoh/kasir-grosir-og.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="../../assets/logo/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="../../assets/logo/favicon.ico" sizes="any">
+<link rel="stylesheet" href="../../templates/aplikasi/aplikasi.css?v=20261127a">
+<style>
+  :root { --utama: #0f766e; --utama-muda: #e3f4f1; }
+  .kasir-tata { display: grid; gap: 14px; grid-template-columns: minmax(0, 1fr); align-items: start; }
+  @media (min-width: 960px) { .kasir-tata { grid-template-columns: minmax(0, 1fr) 380px; } .kasir-keranjang { position: sticky; top: 60px; } }
+  .grid-produk { display: grid; gap: 10px; grid-template-columns: minmax(0, 1fr); }
+  @media (min-width: 600px) { .grid-produk { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+  @media (min-width: 1200px) { .grid-produk { grid-template-columns: repeat(3, minmax(0, 1fr)); } }
+  .kartu-produk { background: var(--kartu); border: 1px solid var(--garis); border-radius: 12px; padding: 12px; display: grid; gap: 10px; }
+  .kartu-produk.tipis { border-color: #fecaca; }
+  .kp-atas b { display: block; font-size: 15px; }
+  .kp-stok { font-size: 12.5px; color: var(--redup); }
+  .kp-satuan { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
+  .tombol-satuan { display: grid; gap: 1px; text-align: left; border: 1px solid #b7dfd8; background: var(--utama-muda); border-radius: 10px; padding: 8px 10px; }
+  .tombol-satuan span { font-size: 12.5px; font-weight: 600; color: var(--utama); }
+  .tombol-satuan b { font-size: 15px; }
+  .tombol-satuan small { font-size: 11px; color: var(--redup); }
+  .tombol-satuan:active { transform: scale(.98); }
+  .daftar-belanja { margin: 12px 0 4px; display: grid; }
+  .baris-belanja { display: grid; grid-template-columns: minmax(0, 1fr) auto auto; gap: 8px; align-items: center; padding: 9px 0; border-bottom: 1px solid var(--garis); }
+  .baris-belanja b { font-size: 14px; }
+  .baris-belanja small { display: block; font-size: 12px; color: var(--redup); }
+  .subtotal { min-width: 86px; text-align: right; }
+  .stepper { display: inline-flex; align-items: center; border: 1px solid var(--garis); border-radius: 8px; overflow: hidden; }
+  .stepper button { width: 30px; height: 30px; border: 0; background: #f9fafb; font-size: 17px; }
+  .stepper span { min-width: 28px; text-align: center; font-weight: 700; font-size: 14px; }
+  .total-baris { display: flex; justify-content: space-between; align-items: baseline; padding: 12px 0; font-size: 15px; }
+  .total-baris b { font-size: 24px; }
+  .metode { display: grid; grid-template-columns: repeat(4, 1fr); gap: 6px; margin-bottom: 10px; }
+  .metode button { height: 38px; border: 1px solid var(--garis); background: var(--kartu); border-radius: 8px; font-weight: 700; font-size: 13px; }
+  .metode button[aria-pressed="true"] { background: var(--utama); border-color: var(--utama); color: #fff; }
+  .uang-cepat { display: flex; flex-wrap: wrap; gap: 6px; margin: 6px 0; }
+  .uang-cepat button { border: 1px dashed #9ca3af; background: #fff; border-radius: 8px; padding: 5px 9px; font-size: 13px; font-weight: 600; }
+  .kembalian { margin: 6px 0 0; font-weight: 800; color: var(--sukses); }
+  .kembalian.kurang { color: var(--bahaya); }
+  .bilah-keranjang { position: fixed; left: 10px; right: 10px; bottom: 10px; z-index: 20; display: flex; justify-content: space-between; align-items: center; gap: 10px; background: var(--utama); color: #fff; text-decoration: none; padding: 12px 16px; border-radius: 14px; box-shadow: 0 10px 24px rgba(15, 118, 110, .35); font-size: 14px; font-weight: 600; }
+  .bilah-keranjang b { font-size: 16px; }
+  @media (min-width: 960px) { .bilah-keranjang { display: none; } }
+  .daftar-pelanggan { display: grid; gap: 10px; }
+  @media (min-width: 900px) { .daftar-pelanggan { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+  .kartu-pelanggan { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 8px 10px; align-items: center; }
+  .kartu-pelanggan small { display: block; color: var(--redup); font-size: 12.5px; }
+  .kasbon-nilai { text-align: right; }
+  .kasbon-nilai b { display: block; font-size: 17px; color: var(--bahaya); }
+  .aksi-pelanggan { grid-column: 1 / -1; display: flex; flex-wrap: wrap; gap: 8px; }
+  .aksi-pelanggan:empty { display: none; }
+  .laporan-tata { display: grid; gap: 12px; }
+  @media (min-width: 900px) { .laporan-tata { grid-template-columns: 1.2fr 1fr; } }
+  .struk { font-family: ui-monospace, "Cascadia Mono", Consolas, monospace; font-size: 13px; background: #fffdf5; border: 1px dashed #d6d3c4; border-radius: 10px; padding: 14px; display: grid; gap: 4px; }
+  .struk > b { font-size: 15px; text-align: center; }
+  .struk > small { text-align: center; color: var(--redup); }
+  .struk hr { border: 0; border-top: 1px dashed #c8c3b0; width: 100%; margin: 6px 0; }
+  .struk-baris { display: flex; justify-content: space-between; gap: 10px; }
+  .struk-baris small { color: var(--redup); }
+  .struk p { text-align: center; margin: 8px 0 0; }
+  main { padding-bottom: 80px; }
+  @media (min-width: 960px) { main { padding-bottom: 20px; } }
+</style>
+</head>
+<body>
+<div id="app"><noscript><p style="padding:24px">Aktifkan JavaScript untuk mencoba aplikasi contoh ini.</p></noscript></div>
+<script src="../../config.js"></script>
+<script src="kasir.js?v=20261127a"></script>
+</body>
+</html>

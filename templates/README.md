@@ -64,3 +64,14 @@ Fitur yang tersedia lewat atribut HTML:
 - [ ] Judul, deskripsi, dan gambar pratinjau (`og:image`) sudah sesuai usaha klien.
 - [ ] Dicek di HP (lebar 375 px) dan di laptop.
 - [ ] Semua foto sudah WebP dan di bawah 100 KB.
+
+## Aplikasi Siap Pakai
+
+Contoh `contoh/kasir-grosir/` dan `contoh/nilai-guru/` adalah dasar untuk aplikasi siap pakai. Gaya bersama ada di `templates/aplikasi/aplikasi.css`.
+
+1. Salin folder contoh ke folder klien beserta `templates/aplikasi/`, lalu sesuaikan path CSS di `index.html` dan hapus baris `../../config.js`.
+2. Di bagian atas `kasir.js` atau `nilai.js`: ganti nama usaha (`TOKO`) atau sekolah, dan ganti `KUNCI` penyimpanan supaya tidak bercampur dengan data contoh.
+3. Ganti isi fungsi `dataAwal()` dengan data klien (barang, harga, satuan, pelanggan, atau daftar siswa dan komponen nilai), atau kosongkan supaya klien mengisi sendiri.
+4. Hapus bilah "Contoh aplikasi" dan tombol "Ulangi data contoh" di kerangka aplikasi, lalu ganti pratinjau WhatsApp dengan tautan `wa.me` sungguhan.
+
+Data tersimpan di browser perangkat (localStorage). Untuk klien yang memakai beberapa perangkat atau cabang, data perlu dipindah ke penyimpanan online (misalnya Supabase atau Google Sheet); itu dihitung sebagai Aplikasi Custom.

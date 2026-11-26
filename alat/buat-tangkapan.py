@@ -19,7 +19,7 @@ from PIL import Image
 ROOT = Path(__file__).resolve().parent.parent
 BASE = os.environ.get("BASE", "http://127.0.0.1:5510")
 OUT = ROOT / "assets" / "contoh"
-CONTOH = ["kanaya-wear", "langkah-footwear", "batik-sekar-jagad", "sekar-wedding", "kopi-tepas"]
+CONTOH = ["kanaya-wear", "langkah-footwear", "batik-sekar-jagad", "sekar-wedding", "kopi-tepas", "kasir-grosir", "nilai-guru"]
 CHROME = next((c for c in [os.environ.get("CHROME", ""),
                            r"C:\Program Files\Google\Chrome\Application\chrome.exe",
                            r"C:\Program Files (x86)\Google\Chrome\Application\chrome.exe",

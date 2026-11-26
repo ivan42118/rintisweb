@@ -22,7 +22,11 @@
     });
   }
   function cariPaket(id) { for (var i = 0; i < paket.length; i++) if (paket[i].id === id) return paket[i]; return null; }
-  function pesanPaket(p) { return sapaan + 'saya tertarik paket ' + p.nama + ' (' + rupiah(p.harga) + '). Usaha saya: '; }
+  function hargaTeks(p) { return (p.mulai ? 'mulai ' : '') + rupiah(p.harga); }
+  function pesanPaket(p) {
+    if (p.mulai) return sapaan + 'saya mau konsultasi ' + p.nama + ' (' + hargaTeks(p) + '). Kebutuhan saya: ';
+    return sapaan + 'saya tertarik paket ' + p.nama + ' (' + rupiah(p.harga) + '). Usaha saya: ';
+  }
   function isi(sel, teks) { if (teks) semua(sel).forEach(function (n) { n.textContent = teks; }); }
 
   if (!wa) $('#peringatan').hidden = false;
@@ -58,14 +62,15 @@
       (p.label ? '<span class="lencana">' + esc(p.label) + '</span>' : '') +
       '<span class="nama">' + esc(p.nama) + '</span>' +
       '<span class="slogan">' + esc(p.slogan) + '</span>' +
-      '<span class="harga"><b>' + rupiah(p.harga) + '</b> &middot; ' + esc(p.lama) + '</span>' +
+      '<span class="harga">' + (p.mulai ? 'mulai ' : '') + '<b>' + rupiah(p.harga) + '</b> &middot; ' + esc(p.lama) + '</span>' +
       '<span class="panah">Lihat contoh &rarr;</span></a>';
   }).join('');
 
   // ---------------------------------------------------------------- kartu contoh
   function kartuContoh(c, judul) {
     var p = cariPaket(c.paket);
-    var pesan = sapaan + 'saya mau dibuatkan website seperti contoh "' + c.nama + '"' + (p ? ' (paket ' + p.nama + ', ' + rupiah(p.harga) + ')' : '') + '. Usaha saya: ';
+    var jenisKarya = p && p.id === 'aplikasi' ? 'aplikasi' : 'website';
+    var pesan = sapaan + 'saya mau dibuatkan ' + jenisKarya + ' seperti contoh "' + c.nama + '"' + (p ? ' (' + p.nama + ', ' + hargaTeks(p) + ')' : '') + '. Usaha saya: ';
     return '<article class="kartu-contoh">' +
       '<a class="layar" href="' + esc(c.url) + '" tabindex="-1" aria-hidden="true"><img src="' + esc(c.gambar) + '" alt="" width="360" height="780" loading="lazy" decoding="async"></a>' +
       '<div class="isi"><span class="jenis">' + esc(c.jenis) + '</span>' +
@@ -73,9 +78,18 @@
       '<div class="tombol-baris"><a class="tombol tombol-utama tombol-kecil" href="' + esc(c.url) + '">Lihat contoh ' + esc(c.nama) + '</a>' +
       '<a class="tombol tombol-garis tombol-kecil" target="_blank" rel="noopener" href="' + esc(linkWa(pesan)) + '">Mau yang seperti ini</a></div></div></article>';
   }
-  [['toko-online', 'h4'], ['company-profile', 'h3'], ['landing-page', 'h3']].forEach(function (x) {
+  [['toko-online', 'h4'], ['company-profile', 'h3'], ['landing-page', 'h3'], ['aplikasi', 'h4']].forEach(function (x) {
     var wadah = document.getElementById('contoh-' + x[0]);
     if (wadah) wadah.innerHTML = contoh.filter(function (c) { return c.paket === x[0]; }).map(function (c) { return kartuContoh(c, x[1]); }).join('');
+  });
+
+
+  // ---------------------------------------------------------------- bagian aplikasi custom
+  var ap = R.aplikasi || {};
+  semua('[data-harga-aplikasi]').forEach(function (n) { var v = ap[n.getAttribute('data-harga-aplikasi')]; if (v) n.textContent = rupiah(v); });
+  semua('[data-wa-aplikasi]').forEach(function (a) {
+    var jenis = a.getAttribute('data-wa-aplikasi');
+    pasangWa(a, sapaan + (jenis ? 'saya tertarik aplikasi ' + jenis + '. Kebutuhan saya: ' : 'saya mau konsultasi aplikasi custom. Kebutuhan saya: '));
   });
 
   // ---------------------------------------------------------------- harga
@@ -83,10 +97,10 @@
     return '<article class="paket' + (p.unggulan ? ' unggul' : '') + '">' +
       (p.label ? '<span class="lencana">' + esc(p.label) + '</span>' : '') +
       '<h3>' + esc(p.nama) + '</h3><p class="slogan">' + esc(p.slogan) + '</p>' +
-      '<div class="harga">' + rupiah(p.harga) + '<small>sekali bayar &middot; ' + esc(p.lama) + '</small></div>' +
+      '<div class="harga">' + (p.mulai ? '<span class="mulai">mulai</span>' : '') + rupiah(p.harga) + '<small>sekali bayar &middot; ' + esc(p.lama) + '</small></div>' +
       (p.cocok ? '<p class="info-kecil">Cocok untuk ' + esc(p.cocok.charAt(0).toLowerCase() + p.cocok.slice(1)) + '.</p>' : '') +
       '<ul>' + (p.fitur || []).map(function (f) { return '<li>' + esc(f) + '</li>'; }).join('') + '</ul>' +
-      '<a class="tombol ' + (p.unggulan ? 'tombol-utama' : 'tombol-garis') + '" target="_blank" rel="noopener" href="' + esc(linkWa(pesanPaket(p))) + '">Pesan ' + esc(p.nama) + '</a></article>';
+      '<a class="tombol ' + (p.unggulan ? 'tombol-utama' : 'tombol-garis') + '" target="_blank" rel="noopener" href="' + esc(linkWa(pesanPaket(p))) + '">' + (p.mulai ? 'Konsultasi ' : 'Pesan ') + esc(p.nama) + '</a></article>';
   }).join('');
   $('#grid-perpanjangan').innerHTML = perp.map(function (x) {
     return '<div class="perpanjangan"><b>' + esc(x.nama) + '</b><div class="harga">' + rupiah(x.harga) + '<small>' + esc(x.satuan) + '</small></div><p>' + esc(x.isi) + '</p></div>';
