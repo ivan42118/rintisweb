@@ -1,0 +1,6 @@
+# Bahan kerja yang tidak perlu ikut online
+konsep-logo/
+_tmp/
+__pycache__/
+*.pyc
+.claude/settings.local.json

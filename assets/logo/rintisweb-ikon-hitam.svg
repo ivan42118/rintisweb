@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="62 57 520 520" role="img" aria-label="RintisWeb, ikon satu warna">
+  <title>RintisWeb, ikon satu warna</title>
+  <defs>
+    <linearGradient id="rw-g-r" x1="0" y1="97" x2="0" y2="537" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#061c7c"/>
+      <stop offset=".5" stop-color="#0a2a9e"/>
+      <stop offset="1" stop-color="#0a5cf0"/>
+    </linearGradient>
+    <linearGradient id="rw-g-panah" x1="80" y1="537" x2="446" y2="222" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#00b8fc"/>
+      <stop offset="1" stop-color="#0a6cff"/>
+    </linearGradient>
+    <mask id="rw-celah" maskUnits="userSpaceOnUse" x="0" y="0" width="640" height="640">
+      <rect width="640" height="640" fill="#fff"/>
+      <path d="M80 537 C 96 450 196 336 364 267 L 350 246 L 446 222 L 413 315 L 396 296 C 288 358 244 452 238 537 Z" fill="#000" stroke="#000" stroke-width="38" stroke-linejoin="round"/>
+    </mask>
+  </defs>
+  <g mask="url(#rw-celah)" fill="#000000">
+    <path fill-rule="evenodd" d="M122 420 V129 Q122 97 154 97 H428 C 508 97 564 160 564 250 C 564 336 506 402 428 404 H186 V420 Z M186 161 H432 C 472 161 499 200 499 250 C 499 304 470 340 428 340 H186 Z"/>
+    <path d="M266 370 H440 L462 390 L556 512 Q568 537 540 537 H412 Q400 537 392 527 Z"/>
+  </g>
+  <g fill="#000000"><circle cx="216" cy="205" r="12.5"/><circle cx="260" cy="205" r="12.5"/><circle cx="304" cy="205" r="12.5"/></g>
+  <path d="M80 537 C 96 450 196 336 364 267 L 350 246 L 446 222 L 413 315 L 396 296 C 288 358 244 452 238 537 Z" fill="#000000" stroke="#000000" stroke-width="2" stroke-linejoin="round"/>
+</svg>

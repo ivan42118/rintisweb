@@ -1,0 +1,6 @@
+User-agent: *
+Allow: /
+Disallow: /alat/
+Disallow: /templates/
+
+Sitemap: https://ivan42118.github.io/rintisweb/sitemap.xml

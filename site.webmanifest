@@ -1,0 +1,12 @@
+{
+  "name": "RintisWeb · Jasa Pembuatan Website",
+  "short_name": "RintisWeb",
+  "start_url": "./",
+  "display": "browser",
+  "background_color": "#ffffff",
+  "theme_color": "#0b1647",
+  "icons": [
+    { "src": "assets/logo/png/icon-192.png", "sizes": "192x192", "type": "image/png" },
+    { "src": "assets/logo/png/icon-512.png", "sizes": "512x512", "type": "image/png" }
+  ]
+}

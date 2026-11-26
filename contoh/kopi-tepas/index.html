@@ -1,0 +1,179 @@
+<!doctype html>
+<html lang="id">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Kopi Tepas · Contoh landing page kafe · RintisWeb</title>
+<meta name="description" content="Contoh landing page kafe buatan RintisWeb: menu dan harga, jam buka, lokasi, dan pesan langsung lewat WhatsApp.">
+<meta name="robots" content="noindex">
+<meta name="theme-color" content="#2b1d16">
+<link rel="canonical" href="https://ivan42118.github.io/rintisweb/contoh/kopi-tepas/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="RintisWeb">
+<meta property="og:title" content="Kopi Tepas: contoh landing page kafe">
+<meta property="og:description" content="Contoh landing page kafe buatan RintisWeb: menu dan harga, jam buka, lokasi, dan pesan langsung lewat WhatsApp.">
+<meta property="og:url" content="https://ivan42118.github.io/rintisweb/contoh/kopi-tepas/">
+<meta property="og:image" content="https://ivan42118.github.io/rintisweb/assets/contoh/kopi-tepas-og.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="../../assets/logo/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="../../assets/logo/favicon.ico" sizes="any">
+<link rel="preload" as="image" href="img/suasana.webp" fetchpriority="high">
+<link rel="stylesheet" href="../../templates/halaman/halaman.css?v=20261126a">
+<style>
+  :root {
+    --utama: #2b1d16; --aksen: #b8612a; --latar: #fffaf4; --latar-2: #f6ede2; --kartu: #ffffff;
+    --teks: #2b1d16; --redup: #7b6858; --garis: #eadcca;
+    --font-judul: "Iowan Old Style", "Palatino Linotype", Palatino, Georgia, serif;
+  }
+</style>
+<script>
+  window.SITUS = {
+    demo: true,
+    nama: 'Kopi Tepas',
+    jenisContoh: 'landing page kafe',
+    whatsapp: '',
+    jamBuka: { 0: ['08:00', '23:00'], 6: ['08:00', '23:00'], setiapHari: ['08:00', '22:00'] },
+    labelChat: 'Pesan',
+    pesanChat: 'Halo Kopi Tepas, saya mau pesan.'
+  };
+</script>
+</head>
+<body>
+
+<nav class="nav" aria-label="Utama"><div class="wadah">
+  <a class="merek" href="#">Kopi Tepas</a>
+  <ul><li><a href="#menu">Menu</a></li><li><a href="#suasana">Suasana</a></li><li><a href="#lokasi">Lokasi</a></li></ul>
+  <a class="tombol tombol-wa tombol-kecil" data-wa="Halo Kopi Tepas, saya mau pesan.">Pesan</a>
+</div></nav>
+
+<header class="hero">
+  <img src="img/suasana.webp" alt="Suasana dalam Kopi Tepas dengan meja kayu dan lampu gantung" width="1200" height="900" fetchpriority="high">
+  <div class="wadah">
+    <span class="pil" data-status-buka>Buka setiap hari</span>
+    <h1>Kopi susu gula aren, roti hangat.</h1>
+    <p>Tempat ngopi santai di tengah Kota Cirebon. Pesan untuk diantar, ambil sendiri, atau duduk lama sambil kerja.</p>
+    <div class="aksi">
+      <a class="tombol tombol-wa" data-wa="Halo Kopi Tepas, saya mau pesan untuk diantar.">Pesan lewat WhatsApp</a>
+      <a class="tombol tombol-terang" href="#menu">Lihat menu</a>
+    </div>
+  </div>
+</header>
+
+<div class="wadah">
+  <div class="info">
+    <div><b>Jam buka</b><span>08.00–22.00, akhir pekan sampai 23.00</span></div>
+    <div><b>Lokasi</b><span>Kota Cirebon (alamat contoh)</span></div>
+    <div><b>Fasilitas</b><span>Wi-Fi, colokan, area merokok terpisah</span></div>
+  </div>
+</div>
+
+<section class="bagian" id="menu" aria-labelledby="h-menu">
+  <div class="wadah">
+    <div class="kepala-bagian">
+      <span class="label-kecil">Menu</span>
+      <h2 id="h-menu">Favorit pelanggan</h2>
+      <p>Tekan "Pesan" dan pesanan langsung terkirim ke WhatsApp kami.</p>
+    </div>
+    <div class="tab" role="tablist" aria-label="Kategori menu">
+      <button type="button" role="tab" aria-selected="true" aria-controls="m-kopi" id="t-kopi">Kopi</button>
+      <button type="button" role="tab" aria-selected="false" aria-controls="m-nonkopi" id="t-nonkopi">Non-kopi</button>
+      <button type="button" role="tab" aria-selected="false" aria-controls="m-makan" id="t-makan">Makanan</button>
+    </div>
+
+    <div class="panel menu" id="m-kopi" role="tabpanel" aria-labelledby="t-kopi">
+      <article class="menu-item"><img src="img/es-kopi-susu.webp" alt="Es kopi susu dalam gelas" width="84" height="84" loading="lazy">
+        <div><h3>Es Kopi Susu Tepas</h3><p>Espresso, susu segar, dan gula aren cair.</p>
+        <div class="baris"><span class="harga">Rp 22.000</span><a class="tombol tombol-utama tombol-kecil" data-wa="Halo Kopi Tepas, saya mau pesan 1 Es Kopi Susu Tepas (Rp 22.000).">Pesan</a></div></div></article>
+      <article class="menu-item"><img src="img/americano.webp" alt="Americano dingin dengan es batu" width="84" height="84" loading="lazy">
+        <div><h3>Americano Dingin</h3><p>Espresso dan air dingin. Segar tanpa gula.</p>
+        <div class="baris"><span class="harga">Rp 20.000</span><a class="tombol tombol-utama tombol-kecil" data-wa="Halo Kopi Tepas, saya mau pesan 1 Americano Dingin (Rp 20.000).">Pesan</a></div></div></article>
+      <article class="menu-item"><img src="img/cold-brew.webp" alt="Cold brew dalam toples kaca" width="84" height="84" loading="lazy">
+        <div><h3>Cold Brew 12 Jam</h3><p>Diseduh dingin semalaman. Rasa lembut dan tidak pahit.</p>
+        <div class="baris"><span class="harga">Rp 25.000</span><a class="tombol tombol-utama tombol-kecil" data-wa="Halo Kopi Tepas, saya mau pesan 1 Cold Brew 12 Jam (Rp 25.000).">Pesan</a></div></div></article>
+      <article class="menu-item tanpa-foto">
+        <div><h3>Kopi Tubruk</h3><p>Kopi robusta lokal diseduh panas, disajikan dengan gula terpisah.</p>
+        <div class="baris"><span class="harga">Rp 15.000</span><a class="tombol tombol-utama tombol-kecil" data-wa="Halo Kopi Tepas, saya mau pesan 1 Kopi Tubruk (Rp 15.000).">Pesan</a></div></div></article>
+    </div>
+
+    <div class="panel menu" id="m-nonkopi" role="tabpanel" aria-labelledby="t-nonkopi" hidden>
+      <article class="menu-item tanpa-foto"><div><h3>Cokelat Dingin</h3><p>Cokelat pekat dengan susu segar.</p>
+        <div class="baris"><span class="harga">Rp 24.000</span><a class="tombol tombol-utama tombol-kecil" data-wa="Halo Kopi Tepas, saya mau pesan 1 Cokelat Dingin (Rp 24.000).">Pesan</a></div></div></article>
+      <article class="menu-item tanpa-foto"><div><h3>Teh Tarik</h3><p>Teh hitam dan susu kental manis, ditarik sampai berbusa.</p>
+        <div class="baris"><span class="harga">Rp 18.000</span><a class="tombol tombol-utama tombol-kecil" data-wa="Halo Kopi Tepas, saya mau pesan 1 Teh Tarik (Rp 18.000).">Pesan</a></div></div></article>
+      <article class="menu-item tanpa-foto"><div><h3>Es Lemon Tea</h3><p>Teh melati dengan perasan lemon segar.</p>
+        <div class="baris"><span class="harga">Rp 16.000</span><a class="tombol tombol-utama tombol-kecil" data-wa="Halo Kopi Tepas, saya mau pesan 1 Es Lemon Tea (Rp 16.000).">Pesan</a></div></div></article>
+    </div>
+
+    <div class="panel menu" id="m-makan" role="tabpanel" aria-labelledby="t-makan" hidden>
+      <article class="menu-item"><img src="img/croissant.webp" alt="Croissant mentega" width="84" height="84" loading="lazy">
+        <div><h3>Croissant Mentega</h3><p>Dipanggang setiap pagi, renyah di luar dan lembut di dalam.</p>
+        <div class="baris"><span class="harga">Rp 22.000</span><a class="tombol tombol-utama tombol-kecil" data-wa="Halo Kopi Tepas, saya mau pesan 1 Croissant Mentega (Rp 22.000).">Pesan</a></div></div></article>
+      <article class="menu-item"><img src="img/pain-au-chocolat.webp" alt="Roti cokelat panggang" width="84" height="84" loading="lazy">
+        <div><h3>Roti Cokelat</h3><p>Roti lapis mentega berisi cokelat leleh.</p>
+        <div class="baris"><span class="harga">Rp 20.000</span><a class="tombol tombol-utama tombol-kecil" data-wa="Halo Kopi Tepas, saya mau pesan 1 Roti Cokelat (Rp 20.000).">Pesan</a></div></div></article>
+      <article class="menu-item tanpa-foto"><div><h3>Roti Bakar Srikaya</h3><p>Roti tebal dengan srikaya pandan buatan sendiri.</p>
+        <div class="baris"><span class="harga">Rp 18.000</span><a class="tombol tombol-utama tombol-kecil" data-wa="Halo Kopi Tepas, saya mau pesan 1 Roti Bakar Srikaya (Rp 18.000).">Pesan</a></div></div></article>
+      <article class="menu-item tanpa-foto"><div><h3>Kentang Goreng</h3><p>Kentang potong tebal dengan saus sambal dan mayones.</p>
+        <div class="baris"><span class="harga">Rp 20.000</span><a class="tombol tombol-utama tombol-kecil" data-wa="Halo Kopi Tepas, saya mau pesan 1 Kentang Goreng (Rp 20.000).">Pesan</a></div></div></article>
+    </div>
+  </div>
+</section>
+
+<section class="bagian abu" id="suasana" aria-labelledby="h-suasana">
+  <div class="wadah dua-kolom">
+    <img src="img/bar.webp" alt="Meja bar dengan mesin espresso dan papan menu" width="1200" height="900" loading="lazy">
+    <div>
+      <div class="kepala-bagian">
+        <span class="label-kecil">Suasana</span>
+        <h2 id="h-suasana">Nyaman untuk kerja dan kumpul</h2>
+        <p>Meja panjang dengan colokan di setiap kursi, Wi-Fi cepat, dan musik pelan. Bisa reservasi meja untuk 10–20 orang untuk arisan atau rapat kecil.</p>
+      </div>
+      <a class="tombol tombol-utama" data-wa="Halo Kopi Tepas, saya mau reservasi meja untuk ... orang, tanggal ... jam ...">Reservasi meja</a>
+    </div>
+  </div>
+</section>
+
+<section class="bagian" aria-labelledby="h-testi">
+  <div class="wadah">
+    <div class="kepala-bagian"><span class="label-kecil">Kata pelanggan</span><h2 id="h-testi">Langganan sejak buka</h2></div>
+    <div class="grid-3 testimoni">
+      <figure class="kartu"><div class="bintang" aria-label="5 dari 5 bintang">&#9733;&#9733;&#9733;&#9733;&#9733;</div><blockquote>Es kopi susunya pas, tidak terlalu manis. Tempatnya enak untuk kerja seharian.</blockquote><figcaption>Fajar, Cirebon</figcaption></figure>
+      <figure class="kartu"><div class="bintang" aria-label="5 dari 5 bintang">&#9733;&#9733;&#9733;&#9733;&#9733;</div><blockquote>Pesan lewat WhatsApp, 20 menit sudah sampai kantor. Croissant-nya masih hangat.</blockquote><figcaption>Maya, Cirebon</figcaption></figure>
+      <figure class="kartu"><div class="bintang" aria-label="5 dari 5 bintang">&#9733;&#9733;&#9733;&#9733;&#9733;</div><blockquote>Reservasi untuk arisan 15 orang, dibantu atur meja dan menu paket. Puas.</blockquote><figcaption>Bu Ratna, Kuningan</figcaption></figure>
+    </div>
+  </div>
+</section>
+
+<section class="bagian abu" id="lokasi" aria-labelledby="h-lokasi">
+  <div class="wadah lokasi">
+    <div>
+      <div class="kepala-bagian">
+        <span class="label-kecil">Lokasi</span>
+        <h2 id="h-lokasi">Mampir ke Kopi Tepas</h2>
+        <p>Kota Cirebon (alamat contoh). Parkir motor dan mobil tersedia.</p>
+      </div>
+      <div class="aksi" style="display:flex;gap:10px;flex-wrap:wrap">
+        <a class="tombol tombol-utama" href="https://www.google.com/maps/search/?api=1&amp;query=Kota+Cirebon" target="_blank" rel="noopener">Buka di Google Maps</a>
+        <a class="tombol tombol-wa" data-wa="Halo Kopi Tepas, saya mau tanya.">Tanya lewat WhatsApp</a>
+      </div>
+    </div>
+    <div class="kartu">
+      <h3>Jam buka</h3>
+      <p>Senin–Jumat: 08.00–22.00<br>Sabtu–Minggu: 08.00–23.00<br>Hari libur nasional tetap buka</p>
+    </div>
+  </div>
+</section>
+
+<footer class="kaki"><div class="wadah">
+  <div><h3>Kopi Tepas</h3><p>Kopi susu gula aren dan roti hangat di Kota Cirebon.</p></div>
+  <div><h3>Jam buka</h3><p>08.00–22.00, akhir pekan sampai 23.00</p></div>
+  <div><h3>Kontak</h3><p>WhatsApp dan Instagram</p></div>
+  <p class="kecil">&copy; <span data-tahun>2026</span> Kopi Tepas &middot; <a href="../../">Website oleh RintisWeb</a></p>
+</div></footer>
+
+<script src="../../config.js"></script>
+<script src="../../templates/halaman/halaman.js?v=20261126a"></script>
+</body>
+</html>
