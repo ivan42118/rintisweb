@@ -42,8 +42,13 @@ def main():
         for c in CONTOH:
             url = f"{BASE}/contoh/{c}/?tanpa-bilah"
             hp = Path(tmp) / f"{c}-hp.png"
-            tangkap(url, 390, 844, 2, hp)
-            im = Image.open(hp).convert("RGB").resize((360, 780), Image.LANCZOS)
+            # Jendela Chrome punya lebar minimum, jadi halaman dimuat di iframe selebar 390 px lalu dipotong.
+            bingkai = Path(tmp) / f"{c}-bingkai.html"
+            bingkai.write_text("<!doctype html><html><body style='margin:0;background:#fff'>"
+                               f"<iframe src='{url}' style='display:block;width:390px;height:844px;border:0'></iframe>"
+                               "</body></html>", encoding="utf-8")
+            tangkap(bingkai.as_uri(), 600, 844, 2, hp)
+            im = Image.open(hp).convert("RGB").crop((0, 0, 780, 1688)).resize((360, 780), Image.LANCZOS)
             im.save(OUT / f"{c}.webp", "WEBP", quality=74, method=6)
             og = Path(tmp) / f"{c}-og.png"
             tangkap(url, 1200, 630, 1, og)

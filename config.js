@@ -32,8 +32,10 @@ window.RINTISWEB = {
       lama: '7–10 hari kerja',
       cocok: 'Toko baju, sepatu, tas, hijab, batik, skincare, camilan',
       fitur: [
+        'Pilih gaya tampilan: Butik, Pasar, atau Galeri',
         'Katalog dengan kategori, pencarian, dan urutan harga',
-        'Varian ukuran dan warna, stok habis per ukuran, harga coret',
+        'Katalog diskon: harga coret, label persen, flash sale dengan hitung mundur',
+        'Varian ukuran dan warna, stok habis per ukuran',
         'Beberapa foto per produk dan panduan ukuran',
         'Keranjang belanja: pesanan rapi masuk WhatsApp (barang, varian, total, alamat)',
         'Ubah produk dan harga sendiri lewat Google Sheet',
@@ -97,12 +99,12 @@ window.RINTISWEB = {
 
   // Website contoh. "paket" harus sama dengan id paket di atas.
   contoh: [
-    { id: 'kanaya-wear', nama: 'Kanaya Wear', jenis: 'Toko baju', paket: 'toko-online', url: 'contoh/kanaya-wear/', gambar: 'assets/contoh/kanaya-wear.webp',
-      ringkas: 'Busana muslimah dan kasual: varian ukuran dan warna, panduan ukuran, keranjang, pesanan ke WhatsApp.' },
-    { id: 'langkah-footwear', nama: 'Langkah Footwear', jenis: 'Toko sepatu', paket: 'toko-online', url: 'contoh/langkah-footwear/', gambar: 'assets/contoh/langkah-footwear.webp',
-      ringkas: 'Sepatu kulit lokal: ukuran 36–44, stok habis per ukuran, panduan ukuran kaki.' },
-    { id: 'batik-sekar-jagad', nama: 'Batik Sekar Jagad', jenis: 'Batik Cirebon', paket: 'toko-online', url: 'contoh/batik-sekar-jagad/', gambar: 'assets/contoh/batik-sekar-jagad.webp',
-      ringkas: 'Kain batik tulis dan cap khas Trusmi, kemeja, blouse, dan pesanan grosir.' },
+    { id: 'kanaya-wear', nama: 'Kanaya Wear', jenis: 'Gaya Butik · toko baju', paket: 'toko-online', url: 'contoh/kanaya-wear/', gambar: 'assets/contoh/kanaya-wear.webp',
+      ringkas: 'Elegan dan tenang: foto besar, rak "Lagi diskon", varian ukuran dan warna, pesanan ke WhatsApp.' },
+    { id: 'langkah-footwear', nama: 'Langkah Footwear', jenis: 'Gaya Pasar · toko sepatu', paket: 'toko-online', url: 'contoh/langkah-footwear/', gambar: 'assets/contoh/langkah-footwear.webp',
+      ringkas: 'Ramai promo seperti marketplace: flash sale dengan hitung mundur, ikon kategori, dan menu bawah ala aplikasi.' },
+    { id: 'batik-sekar-jagad', nama: 'Batik Sekar Jagad', jenis: 'Gaya Galeri · batik Cirebon', paket: 'toko-online', url: 'contoh/batik-sekar-jagad/', gambar: 'assets/contoh/batik-sekar-jagad.webp',
+      ringkas: 'Mewah dan gelap untuk produk premium: koleksi per baris, cerita perajin, dan harga spesial bulan ini.' },
     { id: 'sekar-wedding', nama: 'Sekar Wedding', jenis: 'Wedding organizer', paket: 'company-profile', url: 'contoh/sekar-wedding/', gambar: 'assets/contoh/sekar-wedding.webp',
       ringkas: 'Portofolio, daftar paket, dan cek tanggal lewat WhatsApp.' },
     { id: 'kopi-tepas', nama: 'Kopi Tepas', jenis: 'Kafe', paket: 'landing-page', url: 'contoh/kopi-tepas/', gambar: 'assets/contoh/kopi-tepas.webp',

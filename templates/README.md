@@ -15,13 +15,22 @@ Dua template ini dipakai untuk mengerjakan pesanan dengan cepat. Website contoh 
    - Produk: 600 x 750 px (4:5) atau 640 x 640 px (1:1), format WebP, 20–80 KB.
    - Spanduk: 1400 x 700 px.
 3. Isi `data.js`: nama toko, nomor WA, warna, kategori, produk, pembayaran, dan pengiriman. Setiap bagian sudah diberi keterangan.
+   Pilih **gaya** sesuai keinginan klien:
+
+   | Gaya | Kesan | Contoh |
+   |---|---|---|
+   | `butik` | Elegan dan tenang, foto besar, kategori berupa tab teks, rak "Lagi diskon" | `contoh/kanaya-wear` |
+   | `pasar` | Ramai promo seperti marketplace: karusel, ikon kategori, flash sale dengan hitung mundur, menu bawah | `contoh/langkah-footwear` |
+   | `galeri` | Mewah dan gelap untuk produk premium: koleksi per baris, cerita usaha, harga spesial | `contoh/batik-sekar-jagad` |
+
+   Produk diskon cukup diberi `hargaCoret` (harga lama). Label persen, rak diskon, filter "Diskon", dan tulisan "Kamu hemat" muncul otomatis.
 4. Ganti judul, deskripsi, dan alamat situs di `index.html`.
 5. Jalankan `python -m http.server 5510` di folder klien, buka http://localhost:5510 di HP atau mode HP browser (F12), lalu coba pesan sampai WhatsApp terbuka.
 
 ### Produk dari Google Sheet (supaya klien bisa mengubah sendiri)
 
 1. Buat Google Sheet dengan kolom persis seperti `contoh-sheet.csv`:
-   `id, nama, kategori, harga, harga_coret, label, foto, warna, ukuran, ukuran_habis, habis, deskripsi`
+   `id, nama, kategori, harga, harga_coret, label, foto, warna, ukuran, ukuran_habis, habis, terjual, sisa, deskripsi`
 2. Daftar warna dan ukuran dipisah koma (`S, M, L`). Beberapa foto dipisah garis tegak (`img/a.webp | img/b.webp`). Isi `ya` di kolom `habis` kalau stok habis.
 3. Foto tetap disimpan di folder `img/` website. Klien cukup menulis nama filenya, atau kirim foto baru ke kita lewat WhatsApp.
 4. **File > Bagikan > Publikasikan ke web**, pilih sheet produk, format **CSV**, lalu salin link-nya ke `sheetCsv` di `data.js`.

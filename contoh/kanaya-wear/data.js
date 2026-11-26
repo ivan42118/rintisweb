@@ -1,19 +1,21 @@
-/* Contoh toko online RintisWeb (usaha fiktif). Format sama dengan templates/toko-online/data.js. */
+/* Contoh toko online RintisWeb, gaya BUTIK (usaha fiktif). Format sama dengan templates/toko-online/data.js. */
 window.TOKO = {
   demo: true,
+  gaya: 'butik',
   slug: 'kanaya-wear',
   nama: 'Kanaya Wear',
   slogan: 'Busana harian yang nyaman dan sopan',
   whatsapp: '',
-  tema: { utama: '#6e3626', aksen: '#c0623f', latar: '#fbf7f3', kartu: '#ffffff', teks: '#2a1f1a', redup: '#7a6a62', garis: '#eadfd6', fontJudul: 'serif' },
+  tema: { utama: '#3b2a22', aksen: '#b8613f', latar: '#fbf8f4', kartu: '#ffffff', teks: '#2a1f1a', redup: '#7a6a62', garis: '#ebe2d9', fontJudul: 'serif' },
   rasioFoto: '4 / 5',
   spanduk: {
     gambar: 'img/spanduk.webp',
     judul: 'Koleksi baru akhir tahun',
     teks: 'Bahan adem, potongan longgar, ukuran S sampai XXL.',
-    tombol: 'Belanja sekarang'
+    tombol: 'Lihat koleksi'
   },
-  pengumuman: 'Gratis ongkir se-Kota Cirebon untuk belanja minimal Rp 200.000.',
+  pengumuman: 'Gratis ongkir se-Kota Cirebon untuk belanja minimal Rp 200.000',
+  judulDiskon: 'Lagi diskon',
   kategori: ['Atasan', 'Outer', 'Hijab'],
   produk: [
     { id: 'jaket-bomber', nama: 'Jaket Bomber Terakota', kategori: 'Outer', harga: 219000, hargaCoret: 259000, label: 'Terlaris',
@@ -25,7 +27,7 @@ window.TOKO = {
     { id: 'kaos-basic', nama: 'Kaos Basic Katun Combed 30s', kategori: 'Atasan', harga: 69000, hargaCoret: 89000,
       foto: ['img/kaos-basic.webp'], warna: ['Biru muda', 'Putih', 'Hitam', 'Abu'], ukuran: ['S', 'M', 'L', 'XL', 'XXL'], ukuranHabis: ['S'],
       deskripsi: 'Katun combed 30s yang lembut dan menyerap keringat. Jahitan rantai di bahu supaya tidak mudah melar.' },
-    { id: 'kemeja-linen', nama: 'Kemeja Linen Lengan Panjang', kategori: 'Atasan', harga: 159000,
+    { id: 'kemeja-linen', nama: 'Kemeja Linen Lengan Panjang', kategori: 'Atasan', harga: 159000, hargaCoret: 189000,
       foto: ['img/kemeja-linen.webp', 'img/kemeja-linen-detail.webp'], warna: ['Sage', 'Putih', 'Krem'], ukuran: ['S', 'M', 'L', 'XL'],
       deskripsi: 'Linen campuran rayon yang jatuh dan adem. Potongan oversized, bisa juga dipakai sebagai outer.' },
     { id: 'blouse-motif', nama: 'Blouse Motif Bunga', kategori: 'Atasan', harga: 139000, label: 'Terlaris',
@@ -34,7 +36,7 @@ window.TOKO = {
     { id: 'pashmina-ceruty', nama: 'Pashmina Ceruty Babydoll', kategori: 'Hijab', harga: 49000,
       foto: ['img/pashmina-putih.webp'], warna: ['Putih', 'Hitam', 'Nude', 'Mocca'],
       deskripsi: 'Ceruty babydoll yang tidak licin dan mudah dibentuk. Ukuran 175 × 75 cm.' },
-    { id: 'hijab-voal', nama: 'Hijab Segi Empat Voal', kategori: 'Hijab', harga: 39000, hargaCoret: 55000, label: 'Diskon',
+    { id: 'hijab-voal', nama: 'Hijab Segi Empat Voal', kategori: 'Hijab', harga: 39000, hargaCoret: 55000,
       foto: ['img/hijab-mustard.webp'], warna: ['Mustard', 'Sage', 'Dusty pink'],
       deskripsi: 'Voal premium dengan jahitan tepi rapi. Ukuran 115 × 115 cm, tegak di dahi tanpa banyak peniti.' },
     { id: 'pashmina-plisket', nama: 'Pashmina Plisket Nude', kategori: 'Hijab', harga: 59000, habis: true,
